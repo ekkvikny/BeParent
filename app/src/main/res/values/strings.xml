@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Beparent</string>
+    <string name="kata_sandi">Kata Sandi</string>
+    <string name="masuk">MASUK</string>
+    <string name="lupasandi">Masukkan email yang terdaftar pada akun anda.
+        Petunjuk perubahan kata sandi akan terkirim melalui email tersebut</string>
+    <string name="setting">Setting</string>
+
+
+</resources>

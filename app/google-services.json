@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "73037660580",
+    "firebase_url": "https://beparrent-d5ed5.firebaseio.com",
+    "project_id": "beparrent-d5ed5",
+    "storage_bucket": "beparrent-d5ed5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:73037660580:android:b12e191f4e834244",
+        "android_client_info": {
+          "package_name": "com.example.beparent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "73037660580-7dc0inv70fgrdir3896qa4d8o8tiomii.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.beparent",
+            "certificate_hash": "43de5f0af39ed3a5f56d1924ffa167f2bd6ce1d3"
+          }
+        },
+        {
+          "client_id": "73037660580-pi9hjtf66f1pv4ifu61adllfvi19i0q2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgnbAONWUZDTgOc_iuyl1nHDv4MwS0SzA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "73037660580-pi9hjtf66f1pv4ifu61adllfvi19i0q2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

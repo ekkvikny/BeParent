@@ -1,0 +1,191 @@
+@startuml
+
+title __APP's Class Diagram__\n
+
+  namespace com.example.beparent {
+    class com.example.beparent.AboutActivity {
+    }
+  }
+  
+
+  namespace com.example.beparent {
+    class com.example.beparent.AktivitasActivity {
+    }
+  }
+  
+
+  namespace com.example.beparent {
+    class com.example.beparent.Anak {
+    }
+  }
+  
+
+  namespace com.example.beparent {
+    class com.example.beparent.BuildConfig {
+    }
+  }
+  
+
+  namespace com.example.beparent {
+    class com.example.beparent.EditAnakActivity {
+    }
+  }
+  
+
+  namespace com.example.beparent {
+    class com.example.beparent.EditProfilActivity {
+    }
+  }
+  
+
+  namespace com.example.beparent {
+    class com.example.beparent.GiziActivity {
+    }
+  }
+  
+
+  namespace com.example.beparent {
+    class com.example.beparent.InformasiAnakActivity {
+    }
+  }
+  
+
+  namespace com.example.beparent {
+    class com.example.beparent.KesehatanActivity {
+    }
+  }
+  
+
+  namespace com.example.beparent {
+    class com.example.beparent.KontenViewAdapter {
+    }
+  }
+  
+
+  namespace com.example.beparent {
+    class com.example.beparent.LihatKontenActivity {
+    }
+  }
+  
+
+  namespace com.example.beparent {
+    class com.example.beparent.LoginActivity {
+    }
+  }
+  
+
+  namespace com.example.beparent {
+    class com.example.beparent.LupaSandiActivity {
+    }
+  }
+  
+
+  namespace com.example.beparent {
+    class com.example.beparent.MainActivity {
+    }
+  }
+  
+
+  namespace com.example.beparent {
+    class com.example.beparent.OptionMenuActivity {
+    }
+  }
+  
+
+  namespace com.example.beparent {
+    class com.example.beparent.ProfilActivity {
+    }
+  }
+  
+
+  namespace com.example.beparent {
+    class com.example.beparent.RawatActivity {
+    }
+  }
+  
+
+  namespace com.example.beparent {
+    class com.example.beparent.RecyclerViewAdapter1 {
+    }
+  }
+  
+
+  namespace com.example.beparent {
+    class com.example.beparent.RegisterActivity {
+    }
+  }
+  
+
+  namespace com.example.beparent {
+    class com.example.beparent.SearchActivity {
+    }
+  }
+  
+
+  namespace com.example.beparent {
+    class com.example.beparent.SearchViewAdapter {
+    }
+  }
+  
+
+  namespace com.example.beparent {
+    class com.example.beparent.SplashActivity {
+    }
+  }
+  
+
+  namespace com.example.beparent {
+    class com.example.beparent.TambahAnakActivity {
+    }
+  }
+  
+
+  namespace com.example.beparent {
+    class com.example.beparent.User {
+    }
+  }
+  
+
+  namespace com.example.beparent {
+    class com.example.beparent.data_Konten {
+    }
+  }
+  
+
+  com.example.beparent.AboutActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.beparent.AktivitasActivity .up.|> android.widget.AdapterView.OnItemSelectedListener
+  com.example.beparent.AktivitasActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.beparent.EditAnakActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.beparent.EditProfilActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.beparent.GiziActivity .up.|> android.widget.AdapterView.OnItemSelectedListener
+  com.example.beparent.GiziActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.beparent.InformasiAnakActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.beparent.KesehatanActivity .up.|> android.widget.AdapterView.OnItemSelectedListener
+  com.example.beparent.KesehatanActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.beparent.KontenViewAdapter -up-|> androidx.recyclerview.widget.RecyclerView.Adapter
+  com.example.beparent.LihatKontenActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.beparent.LoginActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.beparent.LupaSandiActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.beparent.MainActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.beparent.OptionMenuActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.beparent.ProfilActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.beparent.RawatActivity .up.|> android.widget.AdapterView.OnItemSelectedListener
+  com.example.beparent.RawatActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.beparent.RecyclerViewAdapter1 -up-|> androidx.recyclerview.widget.RecyclerView.Adapter
+  com.example.beparent.RegisterActivity .up.|> android.widget.AdapterView.OnItemSelectedListener
+  com.example.beparent.RegisterActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.beparent.SearchActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.beparent.SearchActivity o-- com.example.beparent.SearchViewAdapter : adapter
+  com.example.beparent.SearchViewAdapter -up-|> androidx.recyclerview.widget.RecyclerView.Adapter
+  com.example.beparent.SplashActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.beparent.TambahAnakActivity -up-|> androidx.appcompat.app.AppCompatActivity
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
