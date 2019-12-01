@@ -2,6 +2,8 @@ package com.example.beparent;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,6 +73,22 @@ public class RecyclerViewAdapter1 extends RecyclerView.Adapter<RecyclerViewAdapt
         holder.tglLahir.setText(tglLahir);
         holder.kelaminAnak.setText(jenisKelamin);
 
+
+        holder.ListItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("dataNama", listAnak.get(position).getNamaAnak());
+                //bundle.putString("dataKategori", listKonten.get(position).getKategoriKonten());
+                bundle.putString("datatglLahir", listAnak.get(position).getTgllahir());
+                bundle.putString("dataKelamin", listAnak.get(position).getKlaminAnak());
+                bundle.putString("getPrimaryKey", listAnak.get(position).getKey());
+
+                Intent intent = new Intent(v.getContext(), EditAnakActivity.class);
+                intent.putExtras(bundle);
+                context.startActivity(intent);
+            }
+        });
 
 
     }
