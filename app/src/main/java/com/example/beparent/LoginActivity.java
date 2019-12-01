@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin=findViewById(R.id.button_login);
         textUsername = (EditText)findViewById(R.id.text_username);
         textPassword = (EditText) findViewById(R.id.text_password);
-        textLupa = findViewById(R.id.text_lupa);
+        textLupa = (TextView) findViewById(R.id.text_lupakatasandi);
         textDaftar = findViewById(R.id.text_daftar);
         textBelumpunya = findViewById(R.id.text_belumpunyaa);
 
