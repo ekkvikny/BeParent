@@ -42,6 +42,10 @@
             android:parentActivityName=".LoginActivity"
             android:theme="@style/AppTheme2" />
         <activity
+            android:name=".KesehatanActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme2" />
+        <activity
             android:name=".AktivitasActivity"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme2" />

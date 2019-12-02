@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imgRawat;
     private ImageView imgKesehatan;
     private ImageView imgAktivitas;
+    private  ImageView imgBeparent;
     private String type,userId,userEmail,usiaAnak;
 
     private FirebaseAuth auth;
@@ -83,12 +84,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        imgKesehatan = (ImageView) findViewById(R.id.image_kesehatan);
         imgRawat = (ImageView) findViewById(R.id.image_rawat);
         imgAktivitas = (ImageView) findViewById(R.id.image_aktivitas);
 
 
         imgRawat.setClickable(true);
+        imgKesehatan.setClickable(true);
         imgAktivitas.setClickable(true);
 
 
@@ -101,7 +103,15 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        imgKesehatan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                Intent intent=new Intent(MainActivity.this,KesehatanActivity.class);
+                startActivity(intent);
+
+            }
+        });
         imgAktivitas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
