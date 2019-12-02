@@ -3,7 +3,6 @@ package com.example.beparent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -36,7 +35,7 @@ public class InformasiAnakActivity extends AppCompatActivity  {
     private ArrayList<Anak> dataAnak;
 
     private FirebaseAuth auth;
-    private Button btntambahAnak;
+
 
 
     private String GetUserID;
@@ -54,6 +53,7 @@ public class InformasiAnakActivity extends AppCompatActivity  {
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_anak);
         progressBar = findViewById(R.id.progressBar);
+
 
         MyRecyclerView();
         GetData();

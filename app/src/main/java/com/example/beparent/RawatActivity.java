@@ -51,7 +51,7 @@ public class RawatActivity extends AppCompatActivity implements AdapterView.OnIt
 
     private String GetUserID,namaAnak, usiaAnak;
     private Spinner textUrutanAnak;
-    String[] status = { "Anak ke 1"};
+    String[] status = { "Anak ke 1","Anak ke 2" };
     private String txtAnakKe;
     //final String result;
 
@@ -64,6 +64,7 @@ public class RawatActivity extends AppCompatActivity implements AdapterView.OnIt
         setContentView(R.layout.activity_rawat);
         setTitle("Perawatan Anak");
         textUmur = (TextView) findViewById(R.id.text_umur);
+
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         progressBar = findViewById(R.id.progressBar);
         textNamaAnak = (TextView) findViewById(R.id.text_namaanak) ;
@@ -84,10 +85,19 @@ public class RawatActivity extends AppCompatActivity implements AdapterView.OnIt
         mDatabase = FirebaseDatabase.getInstance().getReference("users");
 
 
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(RawatActivity.this, android.R.layout.simple_spinner_item, status );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(adapter);
         spin.setOnItemSelectedListener(this);
+
+        //MyRecyclerView();
+        //GetData();
+
+
+
+
+
 
 
     }
@@ -192,6 +202,52 @@ public class RawatActivity extends AppCompatActivity implements AdapterView.OnIt
                      // Failed to read value
                  }
              });
+
+
+
+         }else if (status[position].equalsIgnoreCase("Anak ke 2")  ){
+             mDatabase.child(GetUserID).child("Anak").child("Anak2").addValueEventListener(new ValueEventListener() {
+                 @Override
+                 public void onDataChange(DataSnapshot dataSnapshot) {
+
+                     if (dataSnapshot.getValue() != null) {
+                         //user exists, do something
+                         Anak user = dataSnapshot.getValue(Anak.class);
+                         namaAnak = user.getNamaAnak();
+                         user.getTgllahir();
+                         user.setTgllahir(user.getTgllahir());
+                         user.setUsia(user.getUsia());
+                         usiaAnak = user.getUsia();
+                         textNamaAnak.setText(namaAnak);
+                         textUmur.setText(usiaAnak + " Bulan");
+
+                         MyRecyclerView();
+                         GetData();
+
+                         if (user.getKlaminAnak().equalsIgnoreCase("Perempuan")){
+                             AvatarAnak.setImageResource(R.drawable.avatarperempuan);
+                         }else {
+                             AvatarAnak.setImageResource(R.drawable.avatarlaki);
+                         }
+
+
+                     } else {
+                         //user does not exist, do something else
+                         Toast.makeText(getApplicationContext(),"Data Gagal Dimuat, Anda Hanya punya 1 anak, Silahkan PIlih Anak ke 1", Toast.LENGTH_LONG).show();
+
+                     }
+
+
+                 }
+
+                 @Override
+                 public void onCancelled(DatabaseError error) {
+                     // Failed to read value
+                 }
+             });
+
+
+
          }
     }
 

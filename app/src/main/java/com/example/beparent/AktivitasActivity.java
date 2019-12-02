@@ -51,7 +51,7 @@ public class AktivitasActivity extends AppCompatActivity implements AdapterView.
 
     private String GetUserID,namaAnak, usiaAnak;
     private Spinner textUrutanAnak;
-    String[] status = { "Anak ke 1" };
+    String[] status = { "Anak ke 1","Anak ke 2" };
     private String txtAnakKe;
     //final String result;
 
@@ -192,6 +192,51 @@ public class AktivitasActivity extends AppCompatActivity implements AdapterView.
                     // Failed to read value
                 }
             });
+
+
+
+        }else if (status[position].equalsIgnoreCase("Anak ke 2")  ){
+            mDatabase.child(GetUserID).child("Anak").child("Anak2").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+
+                    if (dataSnapshot.getValue() != null) {
+                        //user exists, do something
+                        Anak user = dataSnapshot.getValue(Anak.class);
+                        namaAnak = user.getNamaAnak();
+                        user.getTgllahir();
+                        user.setTgllahir(user.getTgllahir());
+                        user.setUsia(user.getUsia());
+                        usiaAnak = user.getUsia();
+                        textNamaAnak.setText(namaAnak);
+                        textUmur.setText(usiaAnak + " Bulan");
+
+                        MyRecyclerView();
+                        GetData();
+
+                        if (user.getKlaminAnak().equalsIgnoreCase("Perempuan")){
+                            AvatarAnak.setImageResource(R.drawable.avatarperempuan);
+                        }else {
+                            AvatarAnak.setImageResource(R.drawable.avatarlaki);
+                        }
+                        //Anak user = dataSnapshot.getValue(Anak.class);
+
+                    } else {
+                        //user does not exist, do something else
+                        Toast.makeText(getApplicationContext(),"Data Gagal Dimuat, Anda Hanya punya 1 anak, Silahkan PIlih Anak ke 1", Toast.LENGTH_LONG).show();
+
+                    }
+
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError error) {
+                    // Failed to read value
+                }
+            });
+
+
 
         }
     }
