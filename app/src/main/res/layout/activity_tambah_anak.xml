@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TambahAnakActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="333dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/text_dataanak"
+            android:layout_width="89dp"
+            android:layout_height="wrap_content"
+            android:text="Data Anak"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/intext_namaanak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nama Anak"
+            android:inputType="textPersonName" />
+
+        <LinearLayout
+            android:layout_width="333dp"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/text_tglanak"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableStart="@drawable/ic_date_range_black_24dp"
+                android:ems="10"
+                android:focusable="false"
+                android:hint="Tgl Lahir dd-mm-yyyy"
+                android:inputType="none" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/rg_jeniskelamin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/linearLayout2"
+
+            android:layout_gravity="right"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="41dp"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/btn_jklaki"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Laki-Laki" />
+
+            <RadioButton
+                android:id="@+id/btn_jkpr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Perempuan" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout13"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <Button
+            android:id="@+id/btn_editbatal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/roundedbutton"
+            android:text="Batal"
+            android:textColor="#FFFFFF" />
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="0dp" />
+
+        <Button
+            android:id="@+id/btn_tmbhanak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/roundedbutton"
+            android:text="Simpan"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
