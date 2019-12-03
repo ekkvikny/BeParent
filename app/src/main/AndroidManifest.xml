@@ -18,6 +18,14 @@
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme2" />
         <activity
+            android:name=".TambahAnakActivity"
+            android:parentActivityName=".InformasiAnakActivity"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".EditAnakActivity"
+            android:parentActivityName=".InformasiAnakActivity"
+            android:theme="@style/AppTheme2"/>
+        <activity
             android:name=".InformasiAnakActivity"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme2" />
@@ -36,6 +44,14 @@
         <activity
             android:name=".LupaSandiActivity"
             android:parentActivityName=".LoginActivity"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".GiziActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".KesehatanActivity"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme2" />
         <activity
             android:name=".AktivitasActivity"

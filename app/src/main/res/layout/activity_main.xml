@@ -66,6 +66,21 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"/>
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+        <ImageView
+            android:id="@+id/image_kesehatan"
+            android:layout_width="284dp"
+            android:layout_height="158dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/sehat" />
+
+        <ImageView
+            android:id="@+id/image_deteksi"
+            android:layout_width="284dp"
+            android:layout_height="158dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/deteksi" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

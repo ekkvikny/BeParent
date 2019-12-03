@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imgRawat;
     private ImageView imgKesehatan;
     private ImageView imgAktivitas;
+    private ImageView imgGizi;
+    private  ImageView imgBeparent;
     private String type,userId,userEmail,usiaAnak;
 
     private FirebaseAuth auth;
@@ -83,14 +85,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        imgKesehatan = (ImageView) findViewById(R.id.image_kesehatan);
         imgRawat = (ImageView) findViewById(R.id.image_rawat);
         imgAktivitas = (ImageView) findViewById(R.id.image_aktivitas);
-
+        imgGizi = (ImageView) findViewById(R.id.image_deteksi);
 
         imgRawat.setClickable(true);
+        imgKesehatan.setClickable(true);
         imgAktivitas.setClickable(true);
-
+        imgGizi.setClickable(true);
 
         imgRawat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,7 +104,15 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        imgKesehatan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                Intent intent=new Intent(MainActivity.this,KesehatanActivity.class);
+                startActivity(intent);
+
+            }
+        });
         imgAktivitas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -111,7 +122,15 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        imgGizi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                Intent intent=new Intent(MainActivity.this,GiziActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
 
     }
