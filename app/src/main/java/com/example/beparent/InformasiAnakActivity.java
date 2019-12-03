@@ -1,10 +1,8 @@
 package com.example.beparent;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -32,11 +30,10 @@ public class InformasiAnakActivity extends AppCompatActivity  {
     private ProgressBar progressBar;
     private RecyclerView.LayoutManager layoutManager;
 
-
     //Deklarasi Variable Database Reference dan ArrayList dengan Parameter Class Model kita.
     private DatabaseReference reference;
     private ArrayList<Anak> dataAnak;
-    private Button btntambahAnak;
+
     private FirebaseAuth auth;
 
 
@@ -56,18 +53,11 @@ public class InformasiAnakActivity extends AppCompatActivity  {
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_anak);
         progressBar = findViewById(R.id.progressBar);
-        btntambahAnak = findViewById(R.id.btn_tambah_anak);
 
 
         MyRecyclerView();
         GetData();
-        btntambahAnak.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(InformasiAnakActivity.this, TambahAnakActivity.class);
-                startActivity(intent);
-            }
-        });
+
 
     }
 

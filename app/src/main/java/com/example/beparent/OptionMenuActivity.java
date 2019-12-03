@@ -1,14 +1,17 @@
 package com.example.beparent;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -89,6 +92,7 @@ public class OptionMenuActivity extends AppCompatActivity {
 
         textProfil = (TextView) findViewById(R.id.text_optionprofil);
         textAbout = (TextView) findViewById(R.id.text_optionabout);
+        textHapus = (TextView) findViewById(R.id.text_optionhapusakun);
         textKeluar = (TextView) findViewById(R.id.text_optionkeluar);
         textInfoanak = findViewById(R.id.text_informasianak);
         progressBar = findViewById(R.id.progressBar);
@@ -116,6 +120,12 @@ public class OptionMenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        textHapus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { //belumselesai
+                showDialog();
+            }
+        });
         textKeluar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -127,6 +137,62 @@ public class OptionMenuActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    private void showDialog(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                this);
+
+        // set title dialog
+        alertDialogBuilder.setTitle("Hapus Akun");
+
+        // set pesan dari dialog
+        alertDialogBuilder
+                .setMessage("Jika Anda menghapus akun Be Parent, Semua data tertaut dengan akun Anda akan hilang dan tidak dapat dipulihkan. " +
+                        "Yakin ingin menghapus akun Be Parent Anda?")
+                .setIcon(R.drawable.ic_delete_black_24dp)
+                .setCancelable(false)
+                .setPositiveButton("Hapus",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        hapusAkun();
+                    }
+                })
+                .setNegativeButton("Batal",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // jika tombol ini diklik, akan menutup dialog
+                        // dan tidak terjadi apa2
+                        dialog.cancel();
+                    }
+                });
+
+        // membuat alert dialog dari builder
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // menampilkan alert dialog
+        alertDialog.show();
+    }
+    private void hapusAkun(){
+        FirebaseUser user = mAuth.getCurrentUser();
+        progressBar.setVisibility(View.VISIBLE);
+        if(user != null){
+            user.delete()
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()){
+                                Toast.makeText(OptionMenuActivity.this, "Akun Berhasil Dihapus", Toast.LENGTH_SHORT).show();
+                                Intent intent=new Intent(OptionMenuActivity.this,LoginActivity.class);
+                                startActivity(intent);
+                                progressBar.setVisibility(View.GONE);
+                                finish();
+                            }else {
+                                progressBar.setVisibility(View.GONE);
+                                Toast.makeText(OptionMenuActivity.this, "Terjadi Kesalahan, Silakan Coba Lagi", Toast.LENGTH_SHORT).show();
+
+                            }
+                        }
+                    });
+        }
     }
 
 }
