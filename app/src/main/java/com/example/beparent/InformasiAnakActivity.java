@@ -36,7 +36,7 @@ public class InformasiAnakActivity extends AppCompatActivity  {
     //Deklarasi Variable Database Reference dan ArrayList dengan Parameter Class Model kita.
     private DatabaseReference reference;
     private ArrayList<Anak> dataAnak;
-
+    private Button btntambahAnak;
     private FirebaseAuth auth;
 
 
@@ -56,7 +56,7 @@ public class InformasiAnakActivity extends AppCompatActivity  {
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_anak);
         progressBar = findViewById(R.id.progressBar);
-        Button btntambahAnak = findViewById(R.id.btn_tambah_anak);
+        btntambahAnak = findViewById(R.id.btn_tambah_anak);
 
 
         MyRecyclerView();
